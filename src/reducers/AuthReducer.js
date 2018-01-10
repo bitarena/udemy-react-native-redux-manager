@@ -1,11 +1,17 @@
-import { EMAIL_CHANGED } from '../actions/types';
+import { EMAIL_CHANGED, PASSWORD_CHANGED } from '../actions/types';
 
-const INITIAL_STATE = { email: '' };
+const INITIAL_STATE = {
+  email: '',
+  password: ''
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EMAIL_CHANGED:
-      return { ...state, email: action.payload }; // modifiying one field, react thinks is the same state so would not be ui refresh
+      // modifiying one field, react thinks is the same state so would not be ui refresh
+      return { ...state, email: action.payload };
+    case PASSWORD_CHANGED:
+      return { ...state, password: action.payload };
     default:
       return state;
   }

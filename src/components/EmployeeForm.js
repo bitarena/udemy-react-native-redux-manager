@@ -42,7 +42,7 @@ class EmployeeForm extends Component {
           </Picker>
         </CardSection>
       </View>
-    )
+    );
   }
 }
 
